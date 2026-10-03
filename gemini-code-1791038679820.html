@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Nayaka Putra Prasetya Utomo</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #d97706;
+      --bg-light: #f8fafc;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER / HERO SECTION */
+    header.hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
+      color: var(--white);
+      padding: 50px 0;
+      text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .hero h2 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #93c5fd;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .contact-info a {
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: #b45309;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid #60a5fa;
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background-color: #2563eb;
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION STYLES */
+    .section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .card-subtitle {
+      font-size: 0.95rem;
+      color: var(--primary-light);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    ul.custom-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul.custom-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    ul.custom-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    /* PUBLICATIONS LIST */
+    .pub-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pub-icon {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .pub-link {
+      color: var(--primary-light);
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .pub-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-box h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0f172a;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.9rem; }
+      .hero h2 { font-size: 1.05rem; }
+      .contact-info { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <h1>Nayaka Putra Prasetya Utomo</h1>
+      <h2>Food Engineering Technology</h2>
+      <div class="contact-info">
+        <span><i class="fa-solid fa-location-dot"></i> Tulungagung, Jawa Timur, 66292</span>
+        <span><i class="fa-solid fa-phone"></i> +62 87872677256</span>
+        <span><i class="fa-solid fa-envelope"></i> nayakaputra77@gmail.com</span>
+      </div>
+      <div class="btn-group">
+        <a href="https://drive.google.com/drive/folders/1sPpZQ-1qmoBQFw7wJj06hKGeBLVxIwCN" target="_blank" class="btn btn-primary">
+          <i class="fa-solid fa-folder-open"></i> Google Drive Sertifikat
+        </a>
+        <a href="https://www.linkedin.com/in/nayakapputra" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> Profil LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- TENTANG SAYA -->
+    <section class="section">
+      <h3 class="section-title">Tentang Saya</h3>
+      <div class="card">
+        <p>
+          Lulusan Teknologi Rekayasa Pangan yang terverifikasi sebagai <strong>Food Safety Team Leader (BNSP)</strong>, memiliki pengalaman praktis dibidang Quality Assurance (QA), Process Development, dan Pengawasan Gizi, serta Keamanan Pangan. Terampil dalam perencanaan, inspeksi kualitas bahan baku, serta penerapan standar higiene-sanitasi dan HACCP. Memiliki kepemimpinan yang kuat, analitis, dan adaptif.
+        </p>
+      </div>
+    </section>
+
+    <!-- PUBLIKASI JURNAL ILMIAH -->
+    <section class="section">
+      <h3 class="section-title">Publikasi Jurnal Ilmiah</h3>
+      <div class="card">
+        
+        <div class="pub-item">
+          <div class="pub-icon"><i class="fa-solid fa-book-journal-whills"></i></div>
+          <div>
+            <div class="card-title">IOP Conference Series: Earth and Environmental Science</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Artikel Ilmiah Internasional Terindeks Scopus</p>
+            <a href="https://iopscience.iop.org/article/10.1088/1755-1315/1584/1/012090" target="_blank" class="pub-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> https://iopscience.iop.org/article/10.1088/1755-1315/1584/1/012090
+            </a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-icon"><i class="fa-solid fa-file-pdf"></i></div>
+          <div>
+            <div class="card-title">Journal of Food Engineering (JOFE) — Politeknik Negeri Jember</div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px;">Artikel Jurnal Ilmiah Nasional</p>
+            <a href="https://publikasi.polije.ac.id/jofe/article/view/6105" target="_blank" class="pub-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> https://publikasi.polije.ac.id/jofe/article/view/6105
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PENGALAMAN PROFESIONAL -->
+    <section class="section">
+      <h3 class="section-title">Pengalaman Profesional</h3>
+
+      <div class="card">
+        <div class="card-title">PLO Gizi / Pengawas Gizi</div>
+        <div class="card-subtitle">Badan Gizi Nasional (BGN) – Satuan Pelayanan Pemenuhan Gizi</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> April 2026 – Sekarang</span>
+        <ul class="custom-list">
+          <li>Mengawasi penerimaan bahan baku, alur produksi dapur skala besar dengan jumlah penerima manfaat 2.166, standar higiene-sanitasi, serta pengelolaan retensi sampel makanan.</li>
+          <li>Menyusun siklus menu (20 hari) untuk memenuhi AKG (Angka Kecukupan Gizi) per porsi sebesar 20-25%.</li>
+          <li>Mengevaluasi sisa makanan (plate waste), manajemen menu/alergi/diet khusus, serta edukasi gizi/keamanan pangan secara berkala.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Process Development and Makloon Staff</div>
+        <div class="card-subtitle">PT. Pesta Pora Abadi</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> September 2025 – Desember 2025</span>
+        <ul class="custom-list">
+          <li>Mengoordinasikan uji coba skala produksi bersama tim lintas fungsi untuk memastikan kesesuaian produk dengan standar mutu perusahaan.</li>
+          <li>Evaluasi hasil uji coba dan pendampingan pasca-produksi untuk menjaga konsistensi produk sesuai dengan spesifikasi yang diterapkan.</li>
+          <li>Menyusun laporan teknis hasil uji coba, evaluasi sensori, serta rekomendasi perbaikan proses secara berkesinambungan.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Magang Riset Penelitian Tugas Akhir</div>
+        <div class="card-subtitle">Pusat Riset Teknologi Tepat Guna - BADAN RISET DAN INOVASI NASIONAL (PRTTG-BRIN)</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> Juli 2024 – November 2024</span>
+        <ul class="custom-list">
+          <li>Melakukan riset kualitas pangan pada produk glukomanan sebagai bagian dari proyek tugas akhir.</li>
+          <li>Menguji analisis proksimat (kadar air, abu, protein, lemak, pati, glukomanan) serta mengevaluasi sifat fisik-reologi (viskositas, swelling power, FT-IR).</li>
+          <li>Mendokumentasikan data hasil uji laboratorium secara sistematis dan mengolah data statistik menggunakan SPSS untuk penyusunan draf jurnal ilmiah.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Ketua Tim - Tecnofarm (Alat Deteksi Pestisida Berbasis Sensor pH)</div>
+        <div class="card-subtitle">Penelitian Program Kreativitas Mahasiswa Karsa Cipta (PKM-KC) – Kemendikbudristek</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> Maret 2023 – Juli 2023</span>
+        <ul class="custom-list">
+          <li>Memimpin tim lintas jurusan, melakukan perencanaan sistem alat, mengembangkan pemrograman sistem (coding), dan melakukan uji coba (trial and error) untuk pengoptimalan fungsi alat.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- PENDIDIKAN & SERTIFIKASI -->
+    <section class="section">
+      <h3 class="section-title">Pendidikan & Sertifikasi</h3>
+      
+      <div class="card">
+        <div class="card-title">Sarjana Terapan Teknologi Rekayasa Pangan</div>
+        <div class="card-subtitle">Politeknik Negeri Jember (IPK: 3,76 / 4,00)</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> 2021 – 2025</span>
+        <p style="font-size: 0.95rem; margin-top: 5px;">
+          <strong>Proyek Tugas Akhir (Skripsi):</strong> Pengujian Mutu Produk Glukomanan Komersial di Indonesia. Mengidentifikasi karakteristik produk pangan pada tepung glukomanan komersial berdasarkan sifat kimia, fisik, reologi, dan morfologi.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="margin-bottom: 12px;">Pelatihan, Kursus & Sertifikasi</div>
+        <ul class="custom-list">
+          <li><strong>Food Safety Team Leader</strong> - BNSP (ID Kredensial No. 10320 7514 6 12665 2025)</li>
+          <li><strong>EPT (English Proficiency Test)</strong> - UPA BAHASA POLIJE (ID Kredensial No. 6382/PL17/PD/2024)</li>
+          <li><strong>English For Specific Purpose</strong> - LKP TEXAS</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ORGANISASI & PENCAPAIAN -->
+    <section class="section">
+      <h3 class="section-title">Organisasi & Prestasi</h3>
+      
+      <div class="card">
+        <div class="card-title">Himpunan Mahasiswa Jurusan Teknologi Pertanian</div>
+        <span class="date"><i class="fa-regular fa-calendar"></i> 2022 – 2024</span>
+        <ul class="custom-list">
+          <li><strong>Ketua Departemen Informasi & Komunikasi (2023 - 2024):</strong> Meningkatkan jumlah followers (+1200) melalui desain feed Instagram, mengawasi program kerja, serta memberi arahan operasional anggota.</li>
+          <li><strong>Staff Departemen Informasi & Komunikasi (2022 - 2023):</strong> Menyajikan informasi dan edukasi teknologi pertanian berbasis infografis visual.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="margin-bottom: 10px;">Pencapaian & Penghargaan</div>
+        <ul class="custom-list">
+          <li>Peraih Pendanaan Program Kreativitas Mahasiswa (PKM) Bidang Karsa Cipta — Kemendikbudristek (2023)</li>
+          <li>Juara 1 Kompetisi PKM CORNER Jurusan Teknologi Pertanian Bidang Karsa Cipta (2023)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN & SOFTWARE -->
+    <section class="section">
+      <h3 class="section-title">Keahlian & Kemampuan</h3>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-laptop-code"></i> Technical Applications</h4>
+          <p style="font-size: 0.9rem;">Microsoft Office (Word, Excel, PowerPoint), Google Workspace, SPSS, ImageJ, Canva.</p>
+        </div>
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-language"></i> Bahasa</h4>
+          <p style="font-size: 0.9rem;">Bahasa Indonesia (Aktif / Native), Bahasa Inggris (Professional Working Proficiency).</p>
+        </div>
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-user-check"></i> Competencies</h4>
+          <p style="font-size: 0.9rem;">Food Safety (HACCP), QA/QC, Process Development, Perencanaan Menu & AKG, Kepemimpinan.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Nayaka Putra Prasetya Utomo. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
